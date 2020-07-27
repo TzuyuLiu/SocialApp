@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Facebook",
+        "repositoryURL": "https://github.com/facebook/facebook-ios-sdk",
+        "state": {
+          "branch": null,
+          "revision": "a3ef4451928249e18bb3ae5b7cb906134ed63b26",
+          "version": "7.1.1"
+        }
+      },
+      {
+        "package": "LineSDK",
+        "repositoryURL": "https://github.com/TzuyuLiu/line-sdk-ios-swift",
+        "state": {
+          "branch": null,
+          "revision": "3af54a932974a90683c543b454124e9818f77cbf",
+          "version": "5.5.1"
+        }
+      },
+      {
+        "package": "NVActivityIndicatorView",
+        "repositoryURL": "https://github.com/ninjaprox/NVActivityIndicatorView",
+        "state": {
+          "branch": null,
+          "revision": "4a4726d15367d82bd3e9e1f01625bd76dbbb0c98",
+          "version": "4.8.0"
+        }
+      },
+      {
+        "package": "SkeletonView",
+        "repositoryURL": "https://github.com/Juanpe/SkeletonView",
+        "state": {
+          "branch": null,
+          "revision": "d09a5d75ee09a89db2555a83ab2d61d04c93419b",
+          "version": "1.8.7"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
