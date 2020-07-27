@@ -3,4 +3,4 @@
 
 * 需要在 Model/UnsplashPhoto.swift底下 放入unsplash private key才能夠使用 *
 
-* 目前只支援iphone Xr *
+* 目前畫面只支援iphone Xr *
