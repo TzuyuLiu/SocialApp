@@ -56,8 +56,8 @@ struct Link: Codable{
 
 //MARK:- Unsplash Keys
 enum UnsplashKey{
-    
-    static let privateKey = "輸入unsplash private key"
+    //輸入unsplash private key
+    static let privateKey = ""
     static let client_id = "client_id"
     static let per_page = "per_page"
     static let order_by = "order_by"

@@ -162,7 +162,6 @@ final class FirebaseService{
     //用來取得比時戳更晚的post，並且算post的方式為最晚到最早，limit：取得post數量
     func getRecentPosts(start timestamp: Int? = nil,limit: UInt,completionhandler: @escaping([Post]) -> Void) {
         var postQuery = POST_DB_REF.queryOrdered(byChild: Post.PostInfoKey.timestamp)
-        print("POST_DB_REF:\(POST_DB_REF)")
         if let latestPostTimestamp = timestamp, latestPostTimestamp > 0 {
             //如果有指定時戳，會以比給定值來的新的時戳取得貼文
             //使用queryStarting(atValue:childKey)：會取得比atValue還晚的貼文
