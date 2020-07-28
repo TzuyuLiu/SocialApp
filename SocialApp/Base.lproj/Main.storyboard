@@ -244,14 +244,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Tr-3O-f7j">
                                 <rect key="frame" x="0.0" y="332" width="414" height="564"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="564" id="tQw-GZ-2r6"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" priority="990" constant="564" id="tQw-GZ-2r6"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="dhU-Of-OgN" firstAttribute="top" secondItem="LAu-EU-rMp" secondAttribute="top" id="30P-r4-R7o"/>
                             <constraint firstAttribute="bottom" secondItem="dhU-Of-OgN" secondAttribute="bottom" id="44t-vl-mLU"/>
-                            <constraint firstItem="aTk-ri-dqc" firstAttribute="top" relation="lessThanOrEqual" secondItem="irO-bs-xCl" secondAttribute="bottom" constant="8" id="5d2-Vf-6e8"/>
+                            <constraint firstItem="aTk-ri-dqc" firstAttribute="top" secondItem="irO-bs-xCl" secondAttribute="bottom" constant="8" id="5d2-Vf-6e8"/>
                             <constraint firstAttribute="bottom" secondItem="isP-4E-d2Z" secondAttribute="bottom" id="7Lc-JK-rwD"/>
                             <constraint firstItem="5Tr-3O-f7j" firstAttribute="leading" secondItem="qQU-Dz-ony" secondAttribute="leading" id="7Vi-oJ-GDV"/>
                             <constraint firstItem="ePT-x9-uwp" firstAttribute="trailing" secondItem="qQU-Dz-ony" secondAttribute="trailing" id="9di-7R-7oe"/>
