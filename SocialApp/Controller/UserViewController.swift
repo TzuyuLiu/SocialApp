@@ -22,6 +22,7 @@ class UserViewController: UIViewController {
     @IBOutlet weak var userProfileContainerView: UIView!
     //放兩個tableview的兩個container
     @IBOutlet var showPhotoContainViews: [UIView]!
+    @IBOutlet weak var noPhotoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +34,15 @@ class UserViewController: UIViewController {
         UINavigationBar.appearance().setBackgroundImage(coloredImage, for: UIBarMetrics.default)
     }
     
-    //會先顯示較快出現的tableview，為了確保userPhotos一開始顯示，所以要讓userLikes隱藏
     override func viewWillAppear(_ animated: Bool) {
+        //會先顯示較快出現的tableview，為了確保userPhotos一開始顯示，所以要讓userLikes隱藏
         if view1isHidden {
+            //隱藏userLikes tableview
             showPhotoContainViews[1].isHidden = true
         }
+        noPhotoImageView.isHidden = true
+        //因為沒有按下segment control，因此要先判斷userPhoto是否有照片
+        showNoPhotoImage(selectedSegmentIndex: 0)
     }
     
     //MARK:- Segment Control控制
@@ -46,6 +51,9 @@ class UserViewController: UIViewController {
         showPhotoContainViews.forEach { $0.isHidden = true }
         //顯示segment control選擇到的container view
         showPhotoContainViews[sender.selectedSegmentIndex].isHidden = false
+        //每次切換時先將圖片隱藏起來
+        noPhotoImageView.isHidden = true
+        showNoPhotoImage(selectedSegmentIndex: sender.selectedSegmentIndex)
         if sender.selectedSegmentIndex == 1 {
             view1isHidden = false
         } else {
@@ -102,5 +110,45 @@ class UserViewController: UIViewController {
         }
         //顯示imagePicker介面
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    //MARK:- 無相片時顯示的圖片
+    //selectedSegmentIndex：segment control目前是選擇哪個tableview
+    private func getPhotoCount(selectedSegmentIndex index: Int,completionhandler: @escaping(Int) -> Void){
+        //表示使用userPhotoTableView
+        var photoCount = -1
+        if index == 0 {
+            //查看數量
+            firebaseService.getRecentPosts(limit: 10) { (newPosts) in
+                photoCount = newPosts.count
+                completionhandler(photoCount)
+            }
+        }
+        //表示使用userLikeTableView
+        else {
+            firebaseService.getlikePhotos { (likephotos) in
+                photoCount = likephotos.count
+                completionhandler(photoCount)
+            }
+        }
+    }
+    
+    func showNoPhotoImage(selectedSegmentIndex index: Int) {
+        //如果沒有photo則顯示沒有圖片的圖示
+        _ = getPhotoCount(selectedSegmentIndex: index) { (photoCount) in
+            if photoCount == 0 {
+               self.noPhotoImageView.isHidden = false
+               switch index {
+               case 0:
+                   let image = UIImage(named: "nophoto")?.withTintColor(.gray)
+                   self.noPhotoImageView.image = image
+               case 1:
+                   let image = UIImage(named: "nolikephoto")?.withTintColor(.gray)
+                   self.noPhotoImageView.image = image
+               default:
+                   break
+              }
+           }
+        }
     }
 }

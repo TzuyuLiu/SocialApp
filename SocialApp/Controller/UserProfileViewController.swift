@@ -23,7 +23,6 @@ class UserProfileViewController: UIViewController {
         if let data = UserDefaults.standard.data(forKey: UserKey.userPhoto.rawValue){
             userPhotoImageView.image = UIImage(data: data)
         }
-        print("userPhotoImageView:\(userPhotoImageView.frame.size)")
     }
     
     func chageData(whereNeedChange: String){

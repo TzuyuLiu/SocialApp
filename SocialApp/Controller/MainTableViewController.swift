@@ -37,6 +37,7 @@ class MainTableViewController: UITableViewController {
         }
         loadPhotos()
         tableView.backgroundView = UIImageView(image: UIImage(named: "background1"))
+        tableView.backgroundView?.contentMode = .scaleAspectFill
     }
     
     override func viewWillAppear(_ animated: Bool) {
