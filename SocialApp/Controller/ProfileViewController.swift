@@ -75,19 +75,6 @@ class ProfileViewController: UIViewController {
                 }
             }
         }
-        //登出前會將使用者名字與照片上傳到firebase
-        guard let name = UserDefaults.standard.string(forKey: UserKey.userName.rawValue),let imageData = UserDefaults.standard.data(forKey: UserKey.userPhoto.rawValue) else {
-            print("從UserDefaults取得姓名與照片失敗")
-            return
-        }
-        guard let userPhoto = UIImage(data: imageData) else {
-            print("轉換大頭照失敗")
-            return
-        }
-        print("logout name in profileView:\(name)")
-        firebaseService.uploadUserProfile(userName: name, userImage: userPhoto) {
-            print("上傳使用者資訊")
-        }
         //將所有儲存在UserDefault的資訊抹除
         let domain = Bundle.main.bundleIdentifier!
         UserDefaults.standard.removePersistentDomain(forName: domain)
@@ -102,16 +89,24 @@ class ProfileViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         let choicePhotoAction = UIAlertAction(title: "選擇照片", style: .default) { (_) in
-            self.pickPhoto()
+            self.pickAndSavePhoto()
             self.userPhotoChange = true
         }
         alertController.addAction(choicePhotoAction)
         //.destructive字型會顯示紅色
         let removePhotoAction = UIAlertAction(title: "刪除", style: .destructive) { (_) in
-            let personImage = UIImage(systemName: "person.crop.circle.fill")
+            let personImage = UIImage(named: UserKey.blankprofile.rawValue)
             self.userImageView.image = personImage
             if let imageData = personImage?.pngData(){
                 UserDefaults.standard.set(imageData, forKey: UserKey.userPhoto.rawValue)
+            }
+            guard let userName = UserDefaults.standard.string(forKey: UserKey.userName.rawValue) else {
+                print("取得使用者名字失敗")
+                return
+            }
+            //上傳使用者照片，使用blankprofile作為上傳的照片
+            self.firebaseService.uploadUserProfile(userName: userName, userImage: personImage!) {
+                print("更改使用者照片")
             }
             self.userPhotoChange = true
         }
@@ -140,6 +135,18 @@ class ProfileViewController: UIViewController {
                 return
             }
             UserDefaults.standard.set(userName, forKey: UserKey.userName.rawValue)
+            //上傳更改姓名，使用者圖片則是使用userDefaults中的圖片
+            guard let imageData = UserDefaults.standard.data(forKey: UserKey.userPhoto.rawValue) else {
+                print("從UserDefaults取得照片失敗")
+                return
+            }
+            guard let userPhoto = UIImage(data: imageData) else {
+                print("轉換大頭照失敗")
+                return
+            }
+            self.firebaseService.uploadUserProfile(userName: userName, userImage: userPhoto) {
+                print("更改使用者姓名")
+            }
             self.nameLabel.text = userName
             self.userNameChange = true
         }
@@ -159,7 +166,7 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    func pickPhoto(){
+    func pickAndSavePhoto(){
         let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary
@@ -170,6 +177,14 @@ extension ProfileViewController: UIImagePickerControllerDelegate,UINavigationCon
         //取得照片
         let image = info[.originalImage] as! UIImage
         userImageView.image = image
+        //上傳使用者照片
+        guard let userName = UserDefaults.standard.string(forKey: UserKey.userName.rawValue) else {
+            print("取得使用者名字失敗")
+            return
+        }
+        self.firebaseService.uploadUserProfile(userName: userName, userImage: image) {
+            print("更改使用者姓名")
+        }
         //用pngData將image轉換成data
         if let imageData = image.pngData(){
             UserDefaults.standard.set(imageData, forKey: UserKey.userPhoto.rawValue)

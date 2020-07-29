@@ -14,4 +14,5 @@ public enum UserKey: String {
     case photoURL
     case userPhoto
     case userID
+    case blankprofile = "BlankPhoto"
 }

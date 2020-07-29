@@ -33,7 +33,7 @@ class UserProfileViewController: UIViewController {
             if let data = UserDefaults.standard.data(forKey: UserKey.userPhoto.rawValue){
                 userPhotoImageView.image = UIImage(data: data)
             } else {
-                userPhotoImageView.image = UIImage(systemName: "person.crop.circle.fill")
+                userPhotoImageView.image = UIImage(systemName: UserKey.blankprofile.rawValue)
             }
         }
     }
