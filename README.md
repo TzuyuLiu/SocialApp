@@ -3,8 +3,8 @@
 
 * 需要在 SocialApp/Model/UnsplashPhoto.swift底下 放入unsplash private key才能夠使用，否則不會出現精選圖片 *
 
-* 目前畫面只支援iphone *
+ 目前畫面只支援iphone 
 
-* 同一email只能註冊一次 *
+ 同一email只能註冊一次 
 
 
