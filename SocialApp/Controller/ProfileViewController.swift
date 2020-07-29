@@ -28,9 +28,11 @@ class ProfileViewController: UIViewController {
         self.navigationController?.adjustmentNavigationTitleFontAndColor()
         resetPasswordButton.isHidden = true
         self.title = "設定"
-        //取得使用者名稱與照片
-        nameLabel.text = UserDefaults.standard.string(forKey: UserKey.userName.rawValue)
         nameLabel.textColor = UIColor.white
+        //取得使用者名稱與照片
+        firebaseService.getUserInfo { (user) in
+            self.nameLabel.text = user.userName
+        }
         if let data = UserDefaults.standard.data(forKey: UserKey.userPhoto.rawValue){
             userImageView.image = UIImage(data: data)
         }

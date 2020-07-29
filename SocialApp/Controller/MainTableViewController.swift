@@ -9,10 +9,9 @@
 import UIKit
 import Firebase
 import YPImagePicker
-import SkeletonView
 import Firebase
 import LineSDK
-
+import NVActivityIndicatorView
 
 class MainTableViewController: UITableViewController {
     
@@ -29,10 +28,14 @@ class MainTableViewController: UITableViewController {
         self.navigationController?.makeNavigationBarTransparent()
         self.navigationController?.adjustmentNavigationTitleFontAndColor()
         self.title = "SocialApp"
+        //開始載入動畫
+        self.startAnimating()
         let provider = UserDefaults.standard.string(forKey: UserKey.provider.rawValue)
         if provider == providerID.password.rawValue || provider == providerID.facebook.rawValue || provider == providerID.google.rawValue{
+            //儲存完成後會移除載入動畫
             storeFirebaseData()
         } else if provider == providerID.line.rawValue {
+            //儲存完成後會移除載入動畫
             storeLineUserData()
         }
         loadPhotos()
@@ -158,7 +161,10 @@ class MainTableViewController: UITableViewController {
                        firebaseService.getUserInfo { (user) in
                            if user.userName == ""{
                                firebaseService.uploadUserProfile(userName: currentUser.displayName!, userImage: image) {
-                                   print("上傳使用者資訊中")
+                                   //上傳完成後停止loading
+                                   DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                                       self.stopAnimating()
+                                   }
                                }
                            }
                        }
@@ -194,7 +200,10 @@ class MainTableViewController: UITableViewController {
                           firebaseService.getUserInfo { (user) in
                               if user.userName == "" {
                                   firebaseService.uploadUserProfile(userName: userProfile.displayName, userImage: image) {
-                                      print("上傳使用者資訊中")
+                                      //上傳完成後停止loading
+                                      DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                                          self.stopAnimating()
+                                      }
                                   }
                               }
                           }
@@ -302,5 +311,17 @@ extension MainTableViewController{
                 }
             }
         }
+    }
+}
+//載入動畫設定
+extension UITableViewController:NVActivityIndicatorViewable{
+    func startAnimate() {
+        let width = self.view.bounds.width
+        let height = self.view.bounds.height
+        let size = CGSize(width: width, height: height)
+        self.startAnimating(size, message: "Loading", type: .ballBeat)
+    }
+    func stopAnimate(){
+        self.stopAnimating()
     }
 }

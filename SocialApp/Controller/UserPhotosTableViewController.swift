@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import YPImagePicker
-import SkeletonView
 
 class UserPhotosTableViewController: UITableViewController {
     

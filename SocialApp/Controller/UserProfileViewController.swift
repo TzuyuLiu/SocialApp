@@ -14,11 +14,15 @@ class UserProfileViewController: UIViewController {
 
     @IBOutlet weak var userPhotoImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    //使用userID取得firebase上的資料
+    private let firebaseService = FirebaseService.init(userID: UserDefaults.standard.string(forKey: UserKey.userID.rawValue)!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.init(displayP3Red: 41.0, green: 36.0, blue: 33.0, alpha: 0)
-        userNameLabel.text = UserDefaults.standard.string(forKey: UserKey.userName.rawValue)
+        firebaseService.getUserInfo { (user) in
+            self.userNameLabel.text = user.userName
+        }
         userNameLabel.textColor = UIColor.white
         if let data = UserDefaults.standard.data(forKey: UserKey.userPhoto.rawValue){
             userPhotoImageView.image = UIImage(data: data)

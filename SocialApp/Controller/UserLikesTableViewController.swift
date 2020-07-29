@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SkeletonView
 
 class UserLikesTableViewController: UITableViewController {
     

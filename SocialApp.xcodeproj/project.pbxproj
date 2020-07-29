@@ -32,7 +32,6 @@
 		6379A4EF247F60A200D235C2 /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6379A4EE247F60A200D235C2 /* RestManager.swift */; };
 		6379A4F1247F622100D235C2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6379A4F0247F622100D235C2 /* HTTPMethod.swift */; };
 		637A278524979981005AFBE5 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A278424979981005AFBE5 /* UserProfileViewController.swift */; };
-		637A27882497AB6E005AFBE5 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 637A27872497AB6E005AFBE5 /* SkeletonView */; };
 		637A278B2497ABD9005AFBE5 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 637A278A2497ABD9005AFBE5 /* NVActivityIndicatorView */; };
 		637CDDBF246BD3B90010A950 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 637CDDBE246BD3B90010A950 /* FacebookCore */; };
 		637CDDC1246BD3B90010A950 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 637CDDC0246BD3B90010A950 /* FacebookLogin */; };
@@ -133,7 +132,6 @@
 				637CDDBF246BD3B90010A950 /* FacebookCore in Frameworks */,
 				638579EA24BC67E8007F7C3C /* LineSDK in Frameworks */,
 				637CDDC1246BD3B90010A950 /* FacebookLogin in Frameworks */,
-				637A27882497AB6E005AFBE5 /* SkeletonView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +311,6 @@
 			packageProductDependencies = (
 				637CDDBE246BD3B90010A950 /* FacebookCore */,
 				637CDDC0246BD3B90010A950 /* FacebookLogin */,
-				637A27872497AB6E005AFBE5 /* SkeletonView */,
 				637A278A2497ABD9005AFBE5 /* NVActivityIndicatorView */,
 				638579E924BC67E8007F7C3C /* LineSDK */,
 			);
@@ -347,7 +344,6 @@
 			mainGroup = 6378BB3524639FF9009E179F;
 			packageReferences = (
 				637CDDBD246BD3B90010A950 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
-				637A27862497AB6E005AFBE5 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				637A27892497ABD9005AFBE5 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				638579E824BC67E8007F7C3C /* XCRemoteSwiftPackageReference "line-sdk-ios-swift" */,
 			);
@@ -680,14 +676,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		637A27862497AB6E005AFBE5 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Juanpe/SkeletonView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.8.7;
-			};
-		};
 		637A27892497ABD9005AFBE5 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView";
@@ -715,11 +703,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		637A27872497AB6E005AFBE5 /* SkeletonView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 637A27862497AB6E005AFBE5 /* XCRemoteSwiftPackageReference "SkeletonView" */;
-			productName = SkeletonView;
-		};
 		637A278A2497ABD9005AFBE5 /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 637A27892497ABD9005AFBE5 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
