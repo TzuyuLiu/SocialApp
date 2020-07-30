@@ -59,9 +59,6 @@
                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                             <color key="textColor" red="0.9419122338" green="0.94576162100000005" blue="0.95261234049999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,13 +71,7 @@
                                         <constraint firstItem="rXW-1O-tTF" firstAttribute="centerY" secondItem="Szk-WL-0Vf" secondAttribute="centerY" id="awz-gP-sAy"/>
                                         <constraint firstItem="rXW-1O-tTF" firstAttribute="top" secondItem="Szk-WL-0Vf" secondAttribute="top" id="j3H-vT-kgq"/>
                                     </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
                                 </tableViewCellContentView>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="nameLabel" destination="8nz-WX-26L" id="49M-p5-T5O"/>
                                     <outlet property="photoImageView" destination="rXW-1O-tTF" id="5G8-S7-VAL"/>
@@ -88,9 +79,6 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="NO"/>
-                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="peP-Lx-Vwt" id="rI7-OL-dEZ"/>
                             <outlet property="delegate" destination="peP-Lx-Vwt" id="imU-YF-9az"/>
