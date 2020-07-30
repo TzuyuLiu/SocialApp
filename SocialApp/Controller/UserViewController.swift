@@ -35,14 +35,17 @@ class UserViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //view出現時先將圖片隱藏，使用showNoPhotoImage判斷
+        noPhotoImageView.isHidden = true
         //會先顯示較快出現的tableview，為了確保userPhotos一開始顯示，所以要讓userLikes隱藏
         if view1isHidden {
             //隱藏userLikes tableview
             showPhotoContainViews[1].isHidden = true
+            //目前是userphotos，所以index是0
+            showNoPhotoImage(selectedSegmentIndex: 0)
+        } else {
+            showNoPhotoImage(selectedSegmentIndex: 1)
         }
-        noPhotoImageView.isHidden = true
-        //因為沒有按下segment control，因此要先判斷userPhoto是否有照片
-        showNoPhotoImage(selectedSegmentIndex: 0)
     }
     
     //MARK:- Segment Control控制
