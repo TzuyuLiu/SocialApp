@@ -93,6 +93,10 @@ class MainTableViewController: UITableViewController {
             //更新tableview一定要在main thread做，這裡是在背景設定image，所以要用DispatchQueue切換到main thread
             DispatchQueue.main.async {
                 self.displayPhotos(newPhotos: newPhotos)
+                //檢查是否沒關掉loading動畫
+                if self.isAnimating {
+                    self.stopAnimating()
+                }
             }
         }
         pageCount += 1
@@ -311,17 +315,5 @@ extension MainTableViewController{
                 }
             }
         }
-    }
-}
-//載入動畫設定
-extension UITableViewController:NVActivityIndicatorViewable{
-    func startAnimate() {
-        let width = self.view.bounds.width
-        let height = self.view.bounds.height
-        let size = CGSize(width: width, height: height)
-        self.startAnimating(size, message: "Loading", type: .ballBeat)
-    }
-    func stopAnimate(){
-        self.stopAnimating()
     }
 }

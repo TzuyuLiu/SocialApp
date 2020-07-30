@@ -46,6 +46,7 @@
 		6383E46724C5B9FA00CC066F /* OtherName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383E46624C5B9FA00CC066F /* OtherName.swift */; };
 		6385157B2472231E00FD9F9F /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385157A2472231E00FD9F9F /* ResetPasswordViewController.swift */; };
 		638579EA24BC67E8007F7C3C /* LineSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 638579E924BC67E8007F7C3C /* LineSDK */; };
+		63AE5A1024D264E700C3737B /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE5A0F24D264E600C3737B /* UITableViewController.swift */; };
 		63D800C4248909E200FC38C0 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D800C3248909E200FC38C0 /* CustomSegue.swift */; };
 		63D800C624890C6000FC38C0 /* SelectedPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D800C524890C6000FC38C0 /* SelectedPhotoViewController.swift */; };
 		63D94ECE24692C79006BF35D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D94ECD24692C79006BF35D /* SignUpViewController.swift */; };
@@ -108,6 +109,7 @@
 		63835550248DEA7800005293 /* UnsplashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashService.swift; sourceTree = "<group>"; };
 		6383E46624C5B9FA00CC066F /* OtherName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherName.swift; sourceTree = "<group>"; };
 		6385157A2472231E00FD9F9F /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		63AE5A0F24D264E600C3737B /* UITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
 		63D800C3248909E200FC38C0 /* CustomSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
 		63D800C524890C6000FC38C0 /* SelectedPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPhotoViewController.swift; sourceTree = "<group>"; };
 		63D94ECD24692C79006BF35D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -150,8 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				63584AEE247B6B1000B48773 /* UIImage.swift */,
-				63D94ED9246A9635006BF35D /* UIViewController.swift */,
 				6378BB712466E393009E179F /* UINavigationController.swift */,
+				63AE5A0F24D264E600C3737B /* UITableViewController.swift */,
+				63D94ED9246A9635006BF35D /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				6383E46724C5B9FA00CC066F /* OtherName.swift in Sources */,
 				6383554B2489F95600005293 /* PhotoCell.swift in Sources */,
 				63D94EDA246A9635006BF35D /* UIViewController.swift in Sources */,
+				63AE5A1024D264E700C3737B /* UITableViewController.swift in Sources */,
 				6380A6642468E461007AA9E0 /* Button.swift in Sources */,
 				63D94ECE24692C79006BF35D /* SignUpViewController.swift in Sources */,
 				637070F424875187001D4A9E /* FirebaseService.swift in Sources */,

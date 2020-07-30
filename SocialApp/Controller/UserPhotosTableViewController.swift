@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import YPImagePicker
+import NVActivityIndicatorView
 
 class UserPhotosTableViewController: UITableViewController {
     
@@ -35,6 +36,7 @@ class UserPhotosTableViewController: UITableViewController {
     //MARK: - 下載與顯示post
     @objc func loadRecentPosts(){
         tableView.reloadData()
+        startAnimate()
         isLoadingPost = true
         //使用getRecentPosts(start:limit)取得最近10筆posts
         //postfeed.first.timestamp:取得最早的timestamp
@@ -58,11 +60,11 @@ class UserPhotosTableViewController: UITableViewController {
                 self.displayNewPosts(newPosts: newPosts)
             }
         }
- 
     }
 
     private func displayNewPosts(newPosts posts: [Post]){
         guard posts.count > 0 else {
+            self.stopAnimate()
             return
         }
         var indexPaths: [IndexPath] = []
@@ -77,6 +79,9 @@ class UserPhotosTableViewController: UITableViewController {
         //使用insertRows插入indexpath，插入位置是indexpath宣告的位置，fade:淡出
         self.tableView.insertRows(at: indexPaths, with: .fade)
         self.tableView.endUpdates()
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            self.stopAnimate()
+        }
     }
 }
 

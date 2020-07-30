@@ -88,6 +88,7 @@ class UserViewController: UIViewController {
         config.colors.bottomMenuItemBackgroundColor = .black
         config.colors.bottomMenuItemSelectedTextColor = .white
         config.colors.bottomMenuItemUnselectedTextColor = .lightGray
+        config.colors.filterBackgroundColor = .black
         config.colors.tintColor = .blue
         
         let imagePicker = YPImagePicker(configuration: config)
@@ -105,6 +106,8 @@ class UserViewController: UIViewController {
             self.firebaseService.uploadImage(image: photo.image) {
                 self.dismiss(animated: true) {
                     NotificationCenter.default.post(name: NSNotification.Name("reloadUserPhotoTable"), object: nil)
+                    //上傳後將noPhoto照片隱藏
+                    self.noPhotoImageView.isHidden = true
                 }
             }
         }
@@ -114,10 +117,17 @@ class UserViewController: UIViewController {
     
     //MARK:- 無相片時顯示的圖片
     //selectedSegmentIndex：segment control目前是選擇哪個tableview
-    private func getPhotoCount(selectedSegmentIndex index: Int,completionhandler: @escaping(Int) -> Void){
+    private func getPhotoCount(selectedSegmentIndex index: Int?,completionhandler: @escaping(Int) -> Void){
+        
+        var segmentIndex = index
+        
+        if index == nil {
+            segmentIndex = 0
+        }
+        
         //表示使用userPhotoTableView
         var photoCount = -1
-        if index == 0 {
+        if segmentIndex == 0 {
             //查看數量
             firebaseService.getRecentPosts(limit: 10) { (newPosts) in
                 photoCount = newPosts.count
@@ -133,7 +143,7 @@ class UserViewController: UIViewController {
         }
     }
     
-    func showNoPhotoImage(selectedSegmentIndex index: Int) {
+    @objc func showNoPhotoImage(selectedSegmentIndex index: Int) {
         //如果沒有photo則顯示沒有圖片的圖示
         _ = getPhotoCount(selectedSegmentIndex: index) { (photoCount) in
             if photoCount == 0 {
