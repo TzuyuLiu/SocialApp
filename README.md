@@ -7,6 +7,4 @@
 
 * 同一email只能註冊一次 
 
-* 下方為展示功能的影片(連結到youtube)
 
-[![](http://img.youtube.com/vi/RxSvnAyZFw0/0.jpg)](http://www.youtube.com/watch?v=RxSvnAyZFw0 "功能展示")
