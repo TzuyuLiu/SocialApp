@@ -35,8 +35,8 @@ class UserPhotosTableViewController: UITableViewController {
     
     //MARK: - 下載與顯示post
     @objc func loadRecentPosts(){
-        tableView.reloadData()
         startAnimate()
+        tableView.reloadData()
         isLoadingPost = true
         //使用getRecentPosts(start:limit)取得最近10筆posts
         //postfeed.first.timestamp:取得最早的timestamp
