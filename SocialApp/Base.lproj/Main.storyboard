@@ -50,9 +50,6 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5s9sei-hfza-vincent-guth" translatesAutoresizingMaskIntoConstraints="NO" id="rXW-1O-tTF">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="363"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andy Liu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nz-WX-26L">
                                             <rect key="frame" x="20" y="323" width="87" height="25"/>
@@ -1421,7 +1418,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="363"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andy Liu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCS-3T-fNl">
-                                            <rect key="frame" x="20" y="323" width="67" height="25"/>
+                                            <rect key="frame" x="20" y="323" width="71.333333333333329" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="1yj-Cj-qK0"/>
                                             </constraints>
