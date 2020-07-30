@@ -7,4 +7,5 @@
 
 * 同一email只能註冊一次 
 
+![image](https://vimeo.com/user120504415/review/442944085/478bd16d76)
 
