@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 extension UIViewController {
     
@@ -32,3 +33,16 @@ extension UIViewController {
         }
     }
 }
+
+extension UIViewController:NVActivityIndicatorViewable{
+    func startAnimate() {
+        let width = self.view.bounds.width
+        let height = self.view.bounds.height
+        let size = CGSize(width: width, height: height)
+        self.startAnimating(size, message: "Loading", type: .ballClipRotate)
+    }
+    func stopAnimate(){
+        self.stopAnimating()
+    }
+}
+
