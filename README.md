@@ -3,9 +3,11 @@
 創造帳號
 -------------------
 ![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/展示功能-創造帳號.gif)
+
 信箱登入
 --------------------
 ![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/展示功能-email帳號登入.gif)
+
 第三方登入畫面
 --------------------
 ![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/facebook登入方法.gif) | ![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/google登入方法.gif) | ![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/line登入方法.gif)
