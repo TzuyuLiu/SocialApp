@@ -1,5 +1,10 @@
 # SocialApp
 
+![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/展示功能-下載圖片.gif)
+
+![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/展示功能-上傳圖片.gif)
+
+![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/展示功能-like照片.gif)
 
 
 練習串連unsplash / facebook / google / line多家api來取得圖片與登入，使用 firebase 管理使用者帳號並讓使用者上傳圖片
