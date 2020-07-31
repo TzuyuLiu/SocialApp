@@ -1,8 +1,17 @@
 # SocialApp
 
-DEMO影片
+
+外部登入畫面
+--------------------
+![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/facebook登入方法.gif) | ![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/google登入方法.gif) | ![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/line登入方法.gif)
+
+上傳圖片以及like照片
 ---------------------
-![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/展示功能-上傳圖片.gif) | ![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/展示功能-like照片.gif) | ![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/展示功能-下載圖片.gif) 
+![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/展示功能-上傳圖片.gif) | ![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/展示功能-like照片.gif) 
+
+下載圖片至相簿
+---------------------
+![image](https://github.com/TzuyuLiu/SocialApp/blob/master/demo/展示功能-下載圖片.gif) 
 
 
 練習串連unsplash / facebook / google / line多家api來取得圖片與登入，使用 firebase 管理使用者帳號並讓使用者上傳圖片
