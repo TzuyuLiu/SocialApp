@@ -55,7 +55,7 @@ struct Link: Codable{
 }
 
 //MARK:- Unsplash Keys
-enum UnsplashKey{
+enum UnsplashParams{
     //輸入unsplash private key
     static let privateKey = ""
     static let client_id = "client_id"
@@ -70,6 +70,6 @@ enum photosOrder{
     static let popular = "popular"
 }
    
-enum EndPoints{
-   static let base = "https://unsplash.com"
+enum UnsplashBaseURL{
+   static let photo = "https://api.unsplash.com/photos/?"
 }

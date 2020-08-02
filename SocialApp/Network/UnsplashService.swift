@@ -18,15 +18,15 @@ final class UnsplashService{
     
     //一次取得一個page的資料
     func getPhoto(whichPage: Int,completionhandler: @escaping([Photos]) -> Void){
-        guard let url = URL(string: "https://api.unsplash.com/photos/?") else {
+        guard let url = URL(string: UnsplashBaseURL.photo) else {
             print("沒有取得url")
             return
         }
         //為url加上query
-        rest.urlQueryParameters.add(value: UnsplashKey.privateKey, forKey: UnsplashKey.client_id)
-        rest.urlQueryParameters.add(value: "30", forKey: UnsplashKey.per_page)
-        rest.urlQueryParameters.add(value: photosOrder.popular, forKey: UnsplashKey.order_by)
-        rest.urlQueryParameters.add(value: String(whichPage) , forKey: UnsplashKey.page)
+        rest.urlQueryParameters.add(value: UnsplashParams.privateKey, forKey: UnsplashParams.client_id)
+        rest.urlQueryParameters.add(value: "30", forKey: UnsplashParams.per_page)
+        rest.urlQueryParameters.add(value: photosOrder.popular, forKey: UnsplashParams.order_by)
+        rest.urlQueryParameters.add(value: String(whichPage) , forKey: UnsplashParams.page)
         rest.makeRequest(toURL: url, withHttpMethod: .get) { (result) in
             if let data = result.data{
                 let decoder = JSONDecoder()
