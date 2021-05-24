@@ -11,6 +11,7 @@ import Foundation
 final class UnsplashService{
     //MARK:- 屬性
     fileprivate let rest = RestManager()
+    private var keys: NSDictionary?
     //設定一個static的shared來讓其他物件使用PostService
     static let shared: UnsplashService = UnsplashService()
     //避免其他物件建立這個類別的實例
@@ -23,7 +24,17 @@ final class UnsplashService{
             return
         }
         //為url加上query
-        rest.urlQueryParameters.add(value: UnsplashParams.privateKey, forKey: UnsplashParams.client_id)
+        guard let path = Bundle.main.path(forResource: "Keys", ofType: "plist") else {
+            fatalError("can't get Keys.plist path")
+        }
+
+        keys = NSDictionary(contentsOfFile: path)
+
+        guard let dict = keys ,let unsplashKey = dict["UnsplashKey"] as? String else {
+            fatalError("find error")
+        }
+
+        rest.urlQueryParameters.add(value: unsplashKey, forKey: UnsplashParams.client_id)
         rest.urlQueryParameters.add(value: "30", forKey: UnsplashParams.per_page)
         rest.urlQueryParameters.add(value: photosOrder.popular, forKey: UnsplashParams.order_by)
         rest.urlQueryParameters.add(value: String(whichPage) , forKey: UnsplashParams.page)

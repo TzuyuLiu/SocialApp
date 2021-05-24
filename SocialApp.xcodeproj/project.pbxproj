@@ -46,6 +46,7 @@
 		6383E46724C5B9FA00CC066F /* OtherName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383E46624C5B9FA00CC066F /* OtherName.swift */; };
 		6385157B2472231E00FD9F9F /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385157A2472231E00FD9F9F /* ResetPasswordViewController.swift */; };
 		638579EA24BC67E8007F7C3C /* LineSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 638579E924BC67E8007F7C3C /* LineSDK */; };
+		63C27CDE265BF45800975469 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63C27CDD265BF45800975469 /* Keys.plist */; };
 		63D800C4248909E200FC38C0 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D800C3248909E200FC38C0 /* CustomSegue.swift */; };
 		63D800C624890C6000FC38C0 /* SelectedPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D800C524890C6000FC38C0 /* SelectedPhotoViewController.swift */; };
 		63D94ECE24692C79006BF35D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D94ECD24692C79006BF35D /* SignUpViewController.swift */; };
@@ -108,6 +109,7 @@
 		63835550248DEA7800005293 /* UnsplashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashService.swift; sourceTree = "<group>"; };
 		6383E46624C5B9FA00CC066F /* OtherName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherName.swift; sourceTree = "<group>"; };
 		6385157A2472231E00FD9F9F /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		63C27CDD265BF45800975469 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		63D800C3248909E200FC38C0 /* CustomSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
 		63D800C524890C6000FC38C0 /* SelectedPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPhotoViewController.swift; sourceTree = "<group>"; };
 		63D94ECD24692C79006BF35D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				6378BB4A2463A001009E179F /* Assets.xcassets */,
 				6378BB4F2463A001009E179F /* Info.plist */,
 				63D94ED124694FC4006BF35D /* GoogleService-Info.plist */,
+				63C27CDD265BF45800975469 /* Keys.plist */,
 			);
 			path = "Bundle files";
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				6378BB4B2463A001009E179F /* Assets.xcassets in Resources */,
 				6378BB6A24651168009E179F /* Rubik-Light.ttf in Resources */,
 				6378BB6C24651168009E179F /* Rubik-Italic.ttf in Resources */,
+				63C27CDE265BF45800975469 /* Keys.plist in Resources */,
 				6378BB6F24651168009E179F /* Rubik-BlackItalic.ttf in Resources */,
 				6378BB6B24651168009E179F /* Rubik-Medium.ttf in Resources */,
 				6378BB6724651168009E179F /* Rubik-Black.ttf in Resources */,
@@ -618,7 +622,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QCS2J62LCS;
+				DEVELOPMENT_TEAM = 5232WVFT49;
 				INFOPLIST_FILE = "SocialApp/Bundle files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -638,7 +642,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QCS2J62LCS;
+				DEVELOPMENT_TEAM = 5232WVFT49;
 				INFOPLIST_FILE = "SocialApp/Bundle files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
